@@ -9,10 +9,28 @@ class App extends Component {
         range: []
     }
 
+    selectHandHandler = (id) => {
+
+        const newRange = [...this.state.range];
+
+        if (this.state.range.includes(id)){
+            const handIndex = this.state.range.indexOf(id);
+            newRange.splice(handIndex, 1);
+            this.setState({range: newRange});
+        } else {
+            newRange.push(id);
+
+            this.setState({range: newRange});
+        }
+    }
+
     render() {
         return (
             <div className="App">
-                <RangeTable/>
+                <RangeTable
+                    range={this.state.range}
+                    selectHand={(id) => this.selectHandHandler(id)}
+                />
             </div>
         );
     }

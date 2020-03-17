@@ -1,205 +1,41 @@
 import React from 'react';
 import RangeBtn from "../RangeBtn/RangeBtn"
 
+//Range Chart to construct range table
+const rangeChart = [[{id:"AA", type:"pair"}, {id:"AKo", type:"offsuit"}, {id:"AQo", type:"offsuit"}, {id:"AJo", type:"offsuit"}, {id:"ATo", type:"offsuit"}, {id:"A9o", type:"offsuit"}, {id:"A8o", type:"offsuit"}, {id:"A7o", type:"offsuit"}, {id:"A6o", type:"offsuit"}, {id:"A5o", type:"offsuit"}, {id:"A4o", type:"offsuit"}, {id:"A3o", type:"offsuit"}, {id:"A2o", type:"offsuit"}],
+[{id:"AKs", type:"suited"}, {id:"KK", type:"pair"}, {id:"KQo", type:"offsuit"}, {id:"KJo", type:"offsuit"}, {id:"KTo", type:"offsuit"}, {id:"K9o", type:"offsuit"}, {id:"K8o", type:"offsuit"}, {id:"K7o", type:"offsuit"}, {id:"K6o", type:"offsuit"}, {id:"K5o", type:"offsuit"}, {id:"K4o", type:"offsuit"}, {id:"K3o", type:"offsuit"}, {id:"K2o", type:"offsuit"}],
+[{id:"AQs", type:"suited"}, {id:"KQs", type:"suited"}, {id:"QQ", type:"pair"}, {id:"QJo", type:"offsuit"}, {id:"QTo", type:"offsuit"}, {id:"Q9o", type:"offsuit"}, {id:"Q8o", type:"offsuit"}, {id:"Q7o", type:"offsuit"}, {id:"Q6o", type:"offsuit"}, {id:"Q5o", type:"offsuit"}, {id:"Q4o", type:"offsuit"}, {id:"Q3o", type:"offsuit"}, {id:"Q2o", type:"offsuit"}],
+[{id:"AJs", type:"suited"}, {id:"KJs", type:"suited"}, {id:"QJs", type:"suited"}, {id:"JJ", type:"pair"}, {id:"JTo", type:"offsuit"}, {id:"J9o", type:"offsuit"}, {id:"J8o", type:"offsuit"}, {id:"J7o", type:"offsuit"}, {id:"J6o", type:"offsuit"}, {id:"J5o", type:"offsuit"}, {id:"J4o", type:"offsuit"}, {id:"J3o", type:"offsuit"}, {id:"J2o", type:"offsuit"}],
+[{id:"ATs", type:"suited"}, {id:"KTs", type:"suited"}, {id:"QTs", type:"suited"}, {id:"JTs", type:"suited"}, {id:"TT", type:"pair"}, {id:"T9o", type:"offsuit"}, {id:"T8o", type:"offsuit"}, {id:"T7o", type:"offsuit"}, {id:"T6o", type:"offsuit"}, {id:"T5o", type:"offsuit"}, {id:"T4o", type:"offsuit"}, {id:"T3o", type:"offsuit"}, {id:"T2o", type:"offsuit"}],
+[{id:"A9s", type:"suited"}, {id:"K9s", type:"suited"}, {id:"Q9s", type:"suited"}, {id:"J9s", type:"suited"}, {id:"T9s", type:"suited"}, {id:"99", type:"pair"}, {id:"98o", type:"offsuit"}, {id:"97o", type:"offsuit"}, {id:"96o", type:"offsuit"}, {id:"95o", type:"offsuit"}, {id:"94o", type:"offsuit"}, {id:"93o", type:"offsuit"}, {id:"92o", type:"offsuit"}],
+[{id:"A8s", type:"suited"}, {id:"K8s", type:"suited"}, {id:"Q8s", type:"suited"}, {id:"J8s", type:"suited"}, {id:"T8s", type:"suited"}, {id:"98s", type:"suited"}, {id:"88", type:"pair"}, {id:"87o", type:"offsuit"}, {id:"86o", type:"offsuit"}, {id:"85o", type:"offsuit"}, {id:"84o", type:"offsuit"}, {id:"83o", type:"offsuit"}, {id:"82o", type:"offsuit"}],
+[{id:"A7s", type:"suited"}, {id:"K7s", type:"suited"}, {id:"Q7s", type:"suited"}, {id:"J7s", type:"suited"}, {id:"T7s", type:"suited"}, {id:"97s", type:"suited"}, {id:"87s", type:"suited"}, {id:"77", type:"pair"}, {id:"76o", type:"offsuit"}, {id:"75o", type:"offsuit"}, {id:"74o", type:"offsuit"}, {id:"73o", type:"offsuit"}, {id:"72o", type:"offsuit"}],
+[{id:"A6s", type:"suited"}, {id:"K6s", type:"suited"}, {id:"Q6s", type:"suited"}, {id:"J6s", type:"suited"}, {id:"T6s", type:"suited"}, {id:"96s", type:"suited"}, {id:"86s", type:"suited"}, {id:"76s", type:"suited"}, {id:"66", type:"pair"}, {id:"65o", type:"offsuit"}, {id:"64o", type:"offsuit"}, {id:"63o", type:"offsuit"}, {id:"62o", type:"offsuit"}],
+[{id:"A5s", type:"suited"}, {id:"K5s", type:"suited"}, {id:"Q5s", type:"suited"}, {id:"J5s", type:"suited"}, {id:"T5s", type:"suited"}, {id:"95s", type:"suited"}, {id:"85s", type:"suited"}, {id:"75s", type:"suited"}, {id:"65s", type:"suited"}, {id:"55", type:"pair"}, {id:"54o", type:"offsuit"}, {id:"63o", type:"offsuit"}, {id:"62o", type:"offsuit"}],
+[{id:"A4s", type:"suited"}, {id:"K4s", type:"suited"}, {id:"Q4s", type:"suited"}, {id:"J4s", type:"suited"}, {id:"T4s", type:"suited"}, {id:"94s", type:"suited"}, {id:"84s", type:"suited"}, {id:"74s", type:"suited"}, {id:"64s", type:"suited"}, {id:"54s", type:"suited"}, {id:"44", type:"pair"}, {id:"43o", type:"offsuit"}, {id:"42o", type:"offsuit"}],
+[{id:"A3s", type:"suited"}, {id:"K3s", type:"suited"}, {id:"Q3s", type:"suited"}, {id:"J3s", type:"suited"}, {id:"T3s", type:"suited"}, {id:"93s", type:"suited"}, {id:"83s", type:"suited"}, {id:"73s", type:"suited"}, {id:"63s", type:"suited"}, {id:"53s", type:"suited"}, {id:"43s", type:"suited"}, {id:"33", type:"pair"}, {id:"32o", type:"offsuit"}],
+[{id:"A2s", type:"suited"}, {id:"K2s", type:"suited"}, {id:"Q2s", type:"suited"}, {id:"J2s", type:"suited"}, {id:"T2s", type:"suited"}, {id:"92s", type:"suited"}, {id:"82s", type:"suited"}, {id:"72s", type:"suited"}, {id:"62s", type:"suited"}, {id:"52s", type:"suited"}, {id:"42s", type:"suited"}, {id:"32s", type:"suited"}, {id:"22", type:"pair"}]];
+
 const rangeTable = (props) => {
     return (
         <div className="RangeTable">
             <div className="row rt-content">
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn>AA</RangeBtn>
-                    <RangeBtn type="offsuit">AKo</RangeBtn>
-                    <RangeBtn type="offsuit">AQo</RangeBtn>
-                    <RangeBtn type="offsuit">AJo</RangeBtn>
-                    <RangeBtn type="offsuit">ATo</RangeBtn>
-                    <RangeBtn type="offsuit">A9o</RangeBtn>
-                    <RangeBtn type="offsuit">A8o</RangeBtn>
-                    <RangeBtn type="offsuit">A7o</RangeBtn>
-                    <RangeBtn type="offsuit">A6o</RangeBtn>
-                    <RangeBtn type="offsuit">A5o</RangeBtn>
-                    <RangeBtn type="offsuit">A4o</RangeBtn>
-                    <RangeBtn type="offsuit">A3o</RangeBtn>
-                    <RangeBtn type="offsuit">A2o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">AKs</RangeBtn>
-                    <RangeBtn>KK</RangeBtn>
-                    <RangeBtn type="offsuit">KQo</RangeBtn>
-                    <RangeBtn type="offsuit">KJo</RangeBtn>
-                    <RangeBtn type="offsuit">KTo</RangeBtn>
-                    <RangeBtn type="offsuit">K9o</RangeBtn>
-                    <RangeBtn type="offsuit">K8o</RangeBtn>
-                    <RangeBtn type="offsuit">K7o</RangeBtn>
-                    <RangeBtn type="offsuit">K6o</RangeBtn>
-                    <RangeBtn type="offsuit">K5o</RangeBtn>
-                    <RangeBtn type="offsuit">K4o</RangeBtn>
-                    <RangeBtn type="offsuit">K3o</RangeBtn>
-                    <RangeBtn type="offsuit">K2o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">AQs</RangeBtn>
-                    <RangeBtn type="suited">KQs</RangeBtn>
-                    <RangeBtn>QQ</RangeBtn>
-                    <RangeBtn type="offsuit">QJo</RangeBtn>
-                    <RangeBtn type="offsuit">QTo</RangeBtn>
-                    <RangeBtn type="offsuit">Q9o</RangeBtn>
-                    <RangeBtn type="offsuit">Q8o</RangeBtn>
-                    <RangeBtn type="offsuit">Q7o</RangeBtn>
-                    <RangeBtn type="offsuit">Q6o</RangeBtn>
-                    <RangeBtn type="offsuit">Q5o</RangeBtn>
-                    <RangeBtn type="offsuit">Q4o</RangeBtn>
-                    <RangeBtn type="offsuit">Q3o</RangeBtn>
-                    <RangeBtn type="offsuit">Q2o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">AJs</RangeBtn>
-                    <RangeBtn type="suited">KJs</RangeBtn>
-                    <RangeBtn type="suited">QJs</RangeBtn>
-                    <RangeBtn>JJ</RangeBtn>
-                    <RangeBtn type="offsuit">JTo</RangeBtn>
-                    <RangeBtn type="offsuit">J9o</RangeBtn>
-                    <RangeBtn type="offsuit">J8o</RangeBtn>
-                    <RangeBtn type="offsuit">J7o</RangeBtn>
-                    <RangeBtn type="offsuit">J6o</RangeBtn>
-                    <RangeBtn type="offsuit">J5o</RangeBtn>
-                    <RangeBtn type="offsuit">J4o</RangeBtn>
-                    <RangeBtn type="offsuit">J3o</RangeBtn>
-                    <RangeBtn type="offsuit">J2o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">ATs</RangeBtn>
-                    <RangeBtn type="suited">KTs</RangeBtn>
-                    <RangeBtn type="suited">QTs</RangeBtn>
-                    <RangeBtn type="suited">JTs</RangeBtn>
-                    <RangeBtn>TT</RangeBtn>
-                    <RangeBtn type="offsuit">T9o</RangeBtn>
-                    <RangeBtn type="offsuit">T8o</RangeBtn>
-                    <RangeBtn type="offsuit">T7o</RangeBtn>
-                    <RangeBtn type="offsuit">T6o</RangeBtn>
-                    <RangeBtn type="offsuit">T5o</RangeBtn>
-                    <RangeBtn type="offsuit">T4o</RangeBtn>
-                    <RangeBtn type="offsuit">T3o</RangeBtn>
-                    <RangeBtn type="offsuit">T2o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">A9s</RangeBtn>
-                    <RangeBtn type="suited">K9s</RangeBtn>
-                    <RangeBtn type="suited">Q9s</RangeBtn>
-                    <RangeBtn type="suited">J9s</RangeBtn>
-                    <RangeBtn type="suited">T9s</RangeBtn>
-                    <RangeBtn>99</RangeBtn>
-                    <RangeBtn type="offsuit">98o</RangeBtn>
-                    <RangeBtn type="offsuit">97o</RangeBtn>
-                    <RangeBtn type="offsuit">96o</RangeBtn>
-                    <RangeBtn type="offsuit">95o</RangeBtn>
-                    <RangeBtn type="offsuit">94o</RangeBtn>
-                    <RangeBtn type="offsuit">93o</RangeBtn>
-                    <RangeBtn type="offsuit">92o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">A8s</RangeBtn>
-                    <RangeBtn type="suited">K8s</RangeBtn>
-                    <RangeBtn type="suited">Q8s</RangeBtn>
-                    <RangeBtn type="suited">J8s</RangeBtn>
-                    <RangeBtn type="suited">T8s</RangeBtn>
-                    <RangeBtn type="suited">98s</RangeBtn>
-                    <RangeBtn>88</RangeBtn>
-                    <RangeBtn type="offsuit">87o</RangeBtn>
-                    <RangeBtn type="offsuit">86o</RangeBtn>
-                    <RangeBtn type="offsuit">85o</RangeBtn>
-                    <RangeBtn type="offsuit">84o</RangeBtn>
-                    <RangeBtn type="offsuit">83o</RangeBtn>
-                    <RangeBtn type="offsuit">82o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">A7s</RangeBtn>
-                    <RangeBtn type="suited">K7s</RangeBtn>
-                    <RangeBtn type="suited">Q7s</RangeBtn>
-                    <RangeBtn type="suited">J7s</RangeBtn>
-                    <RangeBtn type="suited">T7s</RangeBtn>
-                    <RangeBtn type="suited">97s</RangeBtn>
-                    <RangeBtn type="suited">87s</RangeBtn>
-                    <RangeBtn>77</RangeBtn>
-                    <RangeBtn type="offsuit">76o</RangeBtn>
-                    <RangeBtn type="offsuit">75o</RangeBtn>
-                    <RangeBtn type="offsuit">74o</RangeBtn>
-                    <RangeBtn type="offsuit">73o</RangeBtn>
-                    <RangeBtn type="offsuit">72o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">A6s</RangeBtn>
-                    <RangeBtn type="suited">K6s</RangeBtn>
-                    <RangeBtn type="suited">Q6s</RangeBtn>
-                    <RangeBtn type="suited">J6s</RangeBtn>
-                    <RangeBtn type="suited">T6s</RangeBtn>
-                    <RangeBtn type="suited">96s</RangeBtn>
-                    <RangeBtn type="suited">86s</RangeBtn>
-                    <RangeBtn type="suited">76s</RangeBtn>
-                    <RangeBtn>66</RangeBtn>
-                    <RangeBtn type="offsuit">65o</RangeBtn>
-                    <RangeBtn type="offsuit">64o</RangeBtn>
-                    <RangeBtn type="offsuit">63o</RangeBtn>
-                    <RangeBtn type="offsuit">62o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">A5s</RangeBtn>
-                    <RangeBtn type="suited">K5s</RangeBtn>
-                    <RangeBtn type="suited">Q5s</RangeBtn>
-                    <RangeBtn type="suited">J5s</RangeBtn>
-                    <RangeBtn type="suited">T5s</RangeBtn>
-                    <RangeBtn type="suited">95s</RangeBtn>
-                    <RangeBtn type="suited">85s</RangeBtn>
-                    <RangeBtn type="suited">75s</RangeBtn>
-                    <RangeBtn type="suited">65s</RangeBtn>
-                    <RangeBtn>55</RangeBtn>
-                    <RangeBtn type="offsuit">54o</RangeBtn>
-                    <RangeBtn type="offsuit">53o</RangeBtn>
-                    <RangeBtn type="offsuit">52o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">A4s</RangeBtn>
-                    <RangeBtn type="suited">K4s</RangeBtn>
-                    <RangeBtn type="suited">Q4s</RangeBtn>
-                    <RangeBtn type="suited">J4s</RangeBtn>
-                    <RangeBtn type="suited">T4s</RangeBtn>
-                    <RangeBtn type="suited">94s</RangeBtn>
-                    <RangeBtn type="suited">84s</RangeBtn>
-                    <RangeBtn type="suited">74s</RangeBtn>
-                    <RangeBtn type="suited">64s</RangeBtn>
-                    <RangeBtn type="suited">54s</RangeBtn>
-                    <RangeBtn>44</RangeBtn>
-                    <RangeBtn type="offsuit">53o</RangeBtn>
-                    <RangeBtn type="offsuit">52o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">A3s</RangeBtn>
-                    <RangeBtn type="suited">K3s</RangeBtn>
-                    <RangeBtn type="suited">Q3s</RangeBtn>
-                    <RangeBtn type="suited">J3s</RangeBtn>
-                    <RangeBtn type="suited">T3s</RangeBtn>
-                    <RangeBtn type="suited">93s</RangeBtn>
-                    <RangeBtn type="suited">83s</RangeBtn>
-                    <RangeBtn type="suited">73s</RangeBtn>
-                    <RangeBtn type="suited">63s</RangeBtn>
-                    <RangeBtn type="suited">53s</RangeBtn>
-                    <RangeBtn type="suited">43s</RangeBtn>
-                    <RangeBtn>33</RangeBtn>
-                    <RangeBtn type="offsuit">32o</RangeBtn>
-                </div>
-                <div className="col-sm" id="rt-col">
-                    <RangeBtn type="suited">A2s</RangeBtn>
-                    <RangeBtn type="suited">K2s</RangeBtn>
-                    <RangeBtn type="suited">Q2s</RangeBtn>
-                    <RangeBtn type="suited">J2s</RangeBtn>
-                    <RangeBtn type="suited">T2s</RangeBtn>
-                    <RangeBtn type="suited">92s</RangeBtn>
-                    <RangeBtn type="suited">82s</RangeBtn>
-                    <RangeBtn type="suited">72s</RangeBtn>
-                    <RangeBtn type="suited">62s</RangeBtn>
-                    <RangeBtn type="suited">52s</RangeBtn>
-                    <RangeBtn type="suited">42s</RangeBtn>
-                    <RangeBtn type="suited">32s</RangeBtn>
-                    <RangeBtn>22</RangeBtn>
-                </div>
+                {rangeChart.map(column => {
+                    return <div
+                        className="col-sm"
+                        id="rt-col"
+                        key={column[0].id}>
+                        {column.map(hand => {
+                            return <RangeBtn
+                                type={hand.type}
+                                isActive={props.range.includes(hand.id) ? 'rb-active': null}
+                                selectHand={props.selectHand}
+                                key={hand.id}>
+                                {hand.id}
+                            </RangeBtn>
+                        })}
+                    </div>
+                })}
             </div>
         </div>
     )

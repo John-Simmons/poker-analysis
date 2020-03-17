@@ -8,6 +8,11 @@
     background-color: coral;
 }
 
+.rb-active{
+    background-color: coral;
+    border-radius: 4px;
+}
+
 #offsuit{
     background-color: #acbed8;
 }
