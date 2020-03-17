@@ -9,8 +9,13 @@ class App extends Component {
         range: []
     }
 
-    selectHandHandler = (id) => {
+    //This function clears the range selected
+    clearRangeHandler = () => {
+        this.setState({range: []});
+    }
 
+    //This function add/subtracts from the range based on the user selection
+    selectHandHandler = (id) => {
         const newRange = [...this.state.range];
 
         if (this.state.range.includes(id)){
@@ -24,11 +29,23 @@ class App extends Component {
         }
     }
 
+    //TO-DO: This function handles a input in the textbox
+    enterRangeHandler = (event) => {
+        //const range = [...this.state.range];
+
+        const newRange = event.target.value.split(",");
+
+        console.log(newRange);
+
+    }
+
     render() {
         return (
             <div className="App">
                 <RangeTable
                     range={this.state.range}
+                    clearRange={this.clearRangeHandler}
+                    enterRange={(event) => this.enterRangeHandler(event)}
                     selectHand={(id) => this.selectHandHandler(id)}
                 />
             </div>

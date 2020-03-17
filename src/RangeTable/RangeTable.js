@@ -19,16 +19,38 @@ const rangeChart = [[{id:"AA", type:"pair"}, {id:"AKo", type:"offsuit"}, {id:"AQ
 const rangeTable = (props) => {
     return (
         <div className="RangeTable">
-            <div className="row rt-content">
+            <h3
+                className="rt-header">
+                Hero
+            </h3>
+            <div className="rt-input-container input-group">
+                <input
+                    className="form-control rt-input"
+                    id="rt-range-input"
+                    placeholder="Hand range"
+                    type="text"
+                    value={props.range.join(", ")}
+                    onBlur={props.enterRange}
+                />
+                <span className="input-group-btn">
+                    <button
+                        type="button"
+                        className="btn btn-secondary"
+                        onClick={props.clearRange}>
+                        Clear
+                    </button>
+                </span>
+            </div>
+            <div className="row" id="rt-selector">
                 {rangeChart.map(column => {
                     return <div
-                        className="col-sm"
+                        className="col-lg col-md col-sm col-xs"
                         id="rt-col"
                         key={column[0].id}>
                         {column.map(hand => {
                             return <RangeBtn
                                 type={hand.type}
-                                isActive={props.range.includes(hand.id) ? 'rb-active': null}
+                                isActive={props.range.includes(hand.id) ? 'rb-active': 'RangeBtn'}
                                 selectHand={props.selectHand}
                                 key={hand.id}>
                                 {hand.id}

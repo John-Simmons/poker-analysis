@@ -3,9 +3,12 @@ import classNames from 'classnames'
 
 const rangeBtn = (props) => {
     return (
-        <div className='RangeBtn' id={props.type}>
+        <div
+            className={classNames(props.isActive, props.type)}
+            id="square">
             <div
-                className={classNames("rb-content", props.isActive)}
+                className="rb-content"
+                id = "rb-content"
                 onClick={() => props.selectHand(props.children)}>
                 {props.children}
             </div>
