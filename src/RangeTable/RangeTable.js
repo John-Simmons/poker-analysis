@@ -29,6 +29,7 @@ const rangeTable = (props) => {
                     id="rt-range-input"
                     placeholder="Hand range"
                     type="text"
+                    readOnly
                     value={props.range.join(", ")}
                     onBlur={props.enterRange}
                 />
