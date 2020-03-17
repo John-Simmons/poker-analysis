@@ -1,0 +1,25 @@
+.RangeBtn{
+    background-color: #eee;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.RangeBtn:hover{
+    background-color: coral;
+}
+
+#offsuit{
+    background-color: #acbed8;
+}
+
+#offsuit:hover{
+    background-color: coral;
+}
+
+#suited{
+    background-color: #E2D4B7;
+}
+
+#suited:hover{
+    background-color: coral;
+}
