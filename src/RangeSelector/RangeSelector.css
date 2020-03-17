@@ -1,0 +1,22 @@
+.RangeSelector{
+    margin: 16px 16px;
+    text-align: left;
+}
+
+.rt-header{
+    text-align: left;
+    margin: 8px 0px;
+}
+
+.rt-input-container{
+    margin: 16px 0;
+}
+
+#rt-col{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#rt-range-input{
+    margin-right: 16px;
+}

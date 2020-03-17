@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import './RangeBtn/RangeBtn.css'
 import './RangeTable/RangeTable.css'
-import RangeTable from "./RangeTable/RangeTable"
+import './RangeSelector/RangeSelector.css'
+import RangeSelector from "./RangeSelector/RangeSelector"
 
 class App extends Component {
     state = {
@@ -42,12 +43,13 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <RangeTable
+                <RangeSelector
                     range={this.state.range}
                     clearRange={this.clearRangeHandler}
                     enterRange={(event) => this.enterRangeHandler(event)}
-                    selectHand={(id) => this.selectHandHandler(id)}
-                />
+                    selectHand={(id) => this.selectHandHandler(id)}>
+                    Hero
+                </RangeSelector>
             </div>
         );
     }
