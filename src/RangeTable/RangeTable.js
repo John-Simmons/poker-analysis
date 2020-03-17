@@ -44,7 +44,7 @@ const rangeTable = (props) => {
             <div className="row" id="rt-selector">
                 {rangeChart.map(column => {
                     return <div
-                        className="col-lg col-md col-sm col-xs"
+                        className="col"
                         id="rt-col"
                         key={column[0].id}>
                         {column.map(hand => {

@@ -3,7 +3,6 @@
     border: 1px solid #fff;
     border-radius: 4px;
     text-align: center;
-    padding: 2px;
 }
 
 .RangeBtn:hover{
@@ -31,7 +30,11 @@
     border: 1px solid #fff;
     border-radius: 4px;
     text-align: center;
-    padding: 2px;
+    font-style: bold;
+}
+
+.rb-active:hover{
+    border: 2px solid #222;
 }
 
 #square {
@@ -48,4 +51,5 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    font-size: 2.5vw;
 }
