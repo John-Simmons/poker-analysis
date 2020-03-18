@@ -10,8 +10,8 @@ import AddSelector from "./AddSelector/AddSelector"
 class App extends Component {
     state = {
         players: [
-            {id: "Hero", range: [], type: "range"},
-            {id: "Villian 1", range: [], type: "range"}
+            {id: "Hero", range: [], type: "range", removable: false},
+            {id: "Villian", range: [], type: "range", removable: true}
         ]
     }
 
@@ -43,10 +43,14 @@ class App extends Component {
     addPlayerHandler = () => {
         const newPlayers = [...this.state.players]
 
-        let newName = "Villian";
-        newName = newName.concat(newPlayers.length.toString());
+        newPlayers.push({id: "Villian", range:[], type:"range", removable:true});
 
-        newPlayers.push({id:newName, range:[], type:"range"});
+        this.setState({players: newPlayers});
+    }
+
+    removePlayerHandler = (index) => {
+        const newPlayers = [...this.state.players]
+        newPlayers.splice(index, 1);
 
         this.setState({players: newPlayers});
     }
@@ -74,15 +78,14 @@ class App extends Component {
                     {this.state.players.map((player, index) =>{
                         return <div
                             className="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                            key={player.id}>
+                            key={player.id.concat(index)}>
                             <RangeSelector
-                                range={player.range}
-                                entityId={player.id}
+                                player={player}
                                 index={index}
-                                type={player.type}
                                 clearRange={() => this.clearRangeHandler(index)}
                                 enterRange={(event) => this.enterRangeHandler(event)}
-                                selectHand={(handId) => this.selectHandHandler(handId, index)}>
+                                selectHand={(handId) => this.selectHandHandler(handId, index)}
+                                removePlayer={() => this.removePlayerHandler(index)}>
                                 {player.id}
                             </RangeSelector>
                         </div>
