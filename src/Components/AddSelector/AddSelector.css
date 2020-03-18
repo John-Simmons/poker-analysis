@@ -18,6 +18,8 @@
     color: white;
     text-align: center;
     line-height:33px;
+
+    cursor: pointer;
 }
 
 .add-btn:hover {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import './RangeBtn/RangeBtn.css'
-import './RangeTable/RangeTable.css'
-import './RangeSelector/RangeSelector.css'
-import './AddSelector/AddSelector.css'
-import RangeSelector from "./RangeSelector/RangeSelector"
-import AddSelector from "./AddSelector/AddSelector"
+import './Components/RangeBtn/RangeBtn.css'
+import './Components/RangeTable/RangeTable.css'
+import './Components/RangeSelector/RangeSelector.css'
+import './Components/AddSelector/AddSelector.css'
+import RangeSelector from "./Components/RangeSelector/RangeSelector"
+import AddSelector from "./Components/AddSelector/AddSelector"
 
 class App extends Component {
     state = {
