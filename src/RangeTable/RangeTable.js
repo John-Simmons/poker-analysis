@@ -28,6 +28,7 @@ const rangeTable = (props) => {
                         {column.map(hand => {
                             return <RangeBtn
                                 type={hand.type}
+                                index={props.index}
                                 isActive={props.range.includes(hand.id) ? 'rb-active': 'RangeBtn'}
                                 selectHand={props.selectHand}
                                 key={hand.id}>

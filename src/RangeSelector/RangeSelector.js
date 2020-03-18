@@ -29,6 +29,7 @@ const rangeSelector = (props) => {
             </div>
             <RangeTable
                 range={props.range}
+                index={props.index}
                 selectHand={props.selectHand}
             />
         </div>

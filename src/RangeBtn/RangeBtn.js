@@ -9,7 +9,7 @@ const rangeBtn = (props) => {
             <div
                 className="rb-content"
                 id = "rb-content"
-                onClick={() => props.selectHand(props.children)}>
+                onClick={() => props.selectHand(props.children, props.index)}>
                 {props.children}
             </div>
         </div>
