@@ -5,11 +5,11 @@ const rangeBtn = (props) => {
     return (
         <div
             className={classNames(props.isActive, props.type)}
-            id="square">
+            id="square"
+            onClick={() => props.selectHand(props.children, props.index)}>
             <div
                 className="rb-content"
-                id = "rb-content"
-                onClick={() => props.selectHand(props.children, props.index)}>
+                id = "rb-content">
                 {props.children}
             </div>
         </div>
