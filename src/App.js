@@ -69,9 +69,6 @@ class App extends Component {
                             </RangeSelector>
                         </div>
                     })}
-                    <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <AddSelector/>
-                    </div>
                 </div>
             </div>
         );
