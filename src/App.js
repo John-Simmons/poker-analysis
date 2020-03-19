@@ -23,7 +23,7 @@ class App extends Component {
         const newPlayers = [...this.state.players];
         const type = newPlayers[index].type;
 
-        if (type == "range"){
+        if (type === "range"){
             newPlayers[index].type = "hand";
             newPlayers[index].range = [];
         } else {

@@ -18,7 +18,7 @@ const player = (props) => {
 
     //diplay hand or range table
     let table = null;
-    if (props.player.type == "range"){
+    if (props.player.type === "range"){
         table = (
             <RangeTable
                 range={props.player.range}
@@ -26,7 +26,7 @@ const player = (props) => {
                 selectRange={props.selectRange}
             />
         );
-    } else if (props.player.type == "hand"){
+    } else if (props.player.type === "hand"){
         table = (
             <HandTable
                 range={props.player.range}
