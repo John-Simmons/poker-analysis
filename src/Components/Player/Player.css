@@ -1,4 +1,4 @@
-.RangeSelector{
+.Player{
     text-align: left;
 }
 
@@ -23,28 +23,22 @@
     margin-top: 8px;
 }
 
-.RangeSelector .clear-range{
+.Player .clear-range{
     background-color: #555b6e;
 }
 
-.RangeSelector .clear-range:hover{
+.Player .clear-range:hover{
     background-color: #777d8f;
 }
 
-.RangeSelector #clear-btn:active{
+.Player #clear-btn:active{
     background-color: #555b6e;
 }
 
-.RangeSelector #clear-btn:focus{
+.Player #clear-btn:focus{
     background-color: #555b6e;
-}
-
-
-#rt-col{
-    padding-right: 0px;
-    padding-left: 0px;
 }
 
 #rt-range-input{
-    margin-right: 16px;
+    margin-right: 9px;
 }

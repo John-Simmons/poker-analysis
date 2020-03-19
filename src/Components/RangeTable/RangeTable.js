@@ -30,7 +30,7 @@ const rangeTable = (props) => {
                                 type={hand.type}
                                 index={props.index}
                                 isActive={props.range.includes(hand.id) ? 'rb-active': 'RangeBtn'}
-                                selectHand={props.selectHand}
+                                selectHand={props.selectRange}
                                 key={hand.id}>
                                 {hand.id}
                             </RangeBtn>
