@@ -4,13 +4,15 @@ import classNames from 'classnames'
 const handBtn = (props) => {
     return (
         <div
-            className={classNames("HandBtn", props.isActive, props.suit)}
+            className={classNames("HandBtn", props.isActive)}
             id="square"
             onClick={() => props.selectHand(props.children)}>
             <div
                 className="hb-content"
                 id = "hb-content">
                 {props.children}
+                <div className={classNames("suit-symbol", props.suit)}>
+                </div>
             </div>
         </div>
     )
