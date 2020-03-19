@@ -4,27 +4,41 @@ import './Components/RangeBtn/RangeBtn.css'
 import './Components/RangeTable/RangeTable.css'
 import './Components/RangeSelector/RangeSelector.css'
 import './Components/AddSelector/AddSelector.css'
+import './Components/ToggleSelector/ToggleSelector.css'
 import RangeSelector from "./Components/RangeSelector/RangeSelector"
 import AddSelector from "./Components/AddSelector/AddSelector"
 
 class App extends Component {
     state = {
         players: [
-            {id: "Hero", range: [], type: "range", removable: false},
+            {id: "Hero", range: [], type: "hand", removable: false},
             {id: "Villian", range: [], type: "range", removable: true}
         ]
     }
 
+    toggleTypeHandler = (index) => {
+        const newPlayers = [...this.state.players];
+        const type = newPlayers[index].type;
+
+        if (type == "range"){
+            newPlayers[index].type = "hand";
+        } else {
+            newPlayers[index].type = "range";
+        }
+
+        this.setState({players: newPlayers});
+    }
+
     //This function clears the range selected
     clearRangeHandler = (index) => {
-        const newPlayers = [...this.state.players]
+        const newPlayers = [...this.state.players];
         newPlayers[index].range = [];
         this.setState({players: newPlayers});
     }
 
     //This function add/subtracts from the range based on the user selection
     selectHandHandler = (handId, index) => {
-        const newPlayers = [...this.state.players]
+        const newPlayers = [...this.state.players];
         const range = [...this.state.players[index].range];
 
         if (range.includes(handId)){
@@ -41,7 +55,7 @@ class App extends Component {
 
     //Adds a new player to the list
     addPlayerHandler = () => {
-        const newPlayers = [...this.state.players]
+        const newPlayers = [...this.state.players];
 
         newPlayers.push({id: "Villian", range:[], type:"range", removable:true});
 
@@ -49,7 +63,7 @@ class App extends Component {
     }
 
     removePlayerHandler = (index) => {
-        const newPlayers = [...this.state.players]
+        const newPlayers = [...this.state.players];
         newPlayers.splice(index, 1);
 
         this.setState({players: newPlayers});
@@ -85,7 +99,8 @@ class App extends Component {
                                 clearRange={() => this.clearRangeHandler(index)}
                                 enterRange={(event) => this.enterRangeHandler(event)}
                                 selectHand={(handId) => this.selectHandHandler(handId, index)}
-                                removePlayer={() => this.removePlayerHandler(index)}>
+                                removePlayer={() => this.removePlayerHandler(index)}
+                                toggleType={() => this.toggleTypeHandler(index)}>
                                 {player.id}
                             </RangeSelector>
                         </div>

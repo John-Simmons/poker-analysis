@@ -1,5 +1,6 @@
 import React from 'react';
 import RangeTable from "../RangeTable/RangeTable"
+import ToggleSelector from "../ToggleSelector/ToggleSelector"
 
 const rangeSelector = (props) => {
     //Create removeable
@@ -22,12 +23,17 @@ const rangeSelector = (props) => {
                 {props.index>0 ? props.children.concat(" ", props.index): props.children}
             </h3>
             {closeBtn}
+            <ToggleSelector
+                type={props.player.type}
+                toggleType={props.toggleType}
+            />
             <div className="rt-input-container input-group">
-                <input
+                <textarea
                     className="form-control rt-input"
                     id="rt-range-input"
-                    placeholder="Hand range"
+                    placeholder="Range"
                     type="text"
+                    rows="1"
                     readOnly
                     value={props.player.range.join(", ")}
                     onBlur={props.enterRange}
@@ -35,7 +41,8 @@ const rangeSelector = (props) => {
                 <span className="input-group-btn">
                     <button
                         type="button"
-                        className="btn btn-secondary"
+                        className="btn btn-secondary clear-range"
+                        id="clear-btn"
                         onClick={props.clearRange}>
                         Clear
                     </button>

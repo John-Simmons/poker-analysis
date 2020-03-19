@@ -10,7 +10,7 @@
 }
 
 .rt-input-container{
-    margin: 16px 0;
+    margin: 8px 0;
 }
 
 .close-btn{
@@ -21,6 +21,22 @@
     cursor: pointer;
     margin-right: 16px;
     margin-top: 8px;
+}
+
+.RangeSelector .clear-range{
+    background-color: #555b6e;
+}
+
+.RangeSelector .clear-range:hover{
+    background-color: #777d8f;
+}
+
+.RangeSelector #clear-btn:active{
+    background-color: #555b6e;
+}
+
+.RangeSelector #clear-btn:focus{
+    background-color: #555b6e;
 }
 
 
