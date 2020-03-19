@@ -1,6 +1,6 @@
 .HandBtn{
     background-color: #eee;
-    border: 1px solid #222;
+    border: 1px solid #eee;
     border-radius: 4px;
     text-align: center;
     margin: 1px;
@@ -8,7 +8,7 @@
 
 .HandBtn:hover{
     background-color: #555b6e;
-    border: 1px solid #222;
+    border: 1px solid #555b6e;
     color: white;
 }
 
@@ -38,8 +38,8 @@
 
 .hb-active{
     background-color: coral;
-    border: 1px solid #222;
     border-radius: 4px;
+    border: 1px solid coral;
     text-align: center;
     font-style: bold;
     color: #222;

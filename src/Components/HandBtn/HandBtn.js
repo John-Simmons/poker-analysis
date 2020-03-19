@@ -4,7 +4,7 @@ import classNames from 'classnames'
 const handBtn = (props) => {
     return (
         <div
-            className={classNames("HandBtn", props.isActive)}
+            className={classNames("HandBtn", "text-center", props.isActive)}
             id="square"
             onClick={() => props.selectHand(props.children)}>
             <div
