@@ -5,17 +5,26 @@ import './Components/HandBtn/HandBtn.css'
 import './Components/RangeTable/RangeTable.css'
 import './Components/HandTable/HandTable.css'
 import './Components/Player/Player.css'
+import './Components/Board/Board.css'
 import './Components/AddSelector/AddSelector.css'
 import './Components/ToggleSelector/ToggleSelector.css'
 import Player from "./Components/Player/Player"
+import Board from "./Components/Board/Board"
 import AddSelector from "./Components/AddSelector/AddSelector"
 
 class App extends Component {
     state = {
+
         players: [
             {id: "Hero", range: [], type: "hand", removable: false},
             {id: "Villian", range: [], type: "range", removable: true}
-        ]
+        ],
+        board: {
+            flop:[],
+            turn:"",
+            river:""
+        }
+
     }
 
     //Switch from hand to range selector and vice versa
@@ -104,6 +113,9 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <div className="row">
+                    <Board></Board>
+                </div>
                 <div className="row">
                     <AddSelector
                         addPlayer={this.addPlayerHandler}>

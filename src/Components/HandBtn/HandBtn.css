@@ -1,9 +1,10 @@
 .HandBtn{
-    background-color: #eee;
-    border: 1px solid #eee;
+    background-color: #ddd;
+    border: 1px solid #ddd;
     border-radius: 4px;
     text-align: center;
-    margin: 1px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 .HandBtn:hover{

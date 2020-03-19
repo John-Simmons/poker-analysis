@@ -1,0 +1,42 @@
+.Board{
+    border-radius: 4px;
+    background-color: #fff;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    -webkit-box-shadow: -2px 2px 6px 2px #ccc;
+    -moz-box-shadow:    -2px 2px 6px 2px #ccc;
+    box-shadow:         -2px 2px 6px 2px #ccc;
+    width: 100%;
+    padding: 16px;
+    text-align: left;
+}
+
+.streets{
+    text-align: center;
+}
+
+.flop{
+    background-color: coral;
+    display: inline-block;
+    margin-right: 16px;
+    width: 50%;
+    height: 50px
+}
+
+.turn{
+        background-color: coral;
+        display: inline-block;
+        margin-right: 16px;
+        margin-left: 16px;
+        width: 20%;
+        height: 50px
+}
+
+.river{
+    background-color: coral;
+    display: inline-block;
+    margin-left: 16px;
+    width: 20%;
+    height: 50px
+}
