@@ -21,11 +21,64 @@ class App extends Component {
             {id: "Villian", range: [], type: "range", removable: true}
         ],
         board: {
-            flop:[],
-            turn:"",
-            river:""
+            flop: [
+                {card: "", suit: ""},
+                {card: "", suit: ""},
+                {card: "", suit: ""}
+            ],
+            turn: {card:"", suit:""},
+            river: {card:"", suit:""}
         }
 
+    }
+
+    toValidCard = (value) => {
+        const newValue = ["",""];
+        const cardVal = ["2", "3", "4", "5", "6", "7", "8", "9", "t", "j", "q", "k", "a"];
+        const suitVal = ["d", "c", "h", "s"];
+
+        if (value.length === 0){
+            newValue[0] = "";
+            newValue[1] = "";
+        }else if (value.length === 1){
+            if (cardVal.includes(value)){
+                newValue[0] = value.toUpperCase();
+            }else{
+                newValue[0] = "";
+            }
+        }else if (value.length === 2){
+            if (cardVal.includes(value[0])){
+                newValue[0] = value[0].toUpperCase();
+            }else{
+                newValue[0].card = "";
+            }
+
+            if (suitVal.includes(value[1])){
+                newValue[1] = value[1].toLowerCase();
+            }else{
+                newValue[1] = "";
+            }
+        }
+
+        return newValue;
+    }
+
+    enterBoard = (event) => {
+        const newBoard = Object.assign({}, this.state.board);
+        const index = event.target.id.split("-");
+        const value = event.target.value.toLowerCase();
+
+        if (index[0] === "flop"){
+            [newBoard.flop[index[1]].card,newBoard.flop[index[1]].suit] = this.toValidCard(value);
+        }else if (index[0] === "turn"){
+            [newBoard.turn.card, newBoard.turn.suit] = this.toValidCard(value);
+        }else if (index[0] === "river"){
+            [newBoard.river.card, newBoard.river.suit] = this.toValidCard(value);
+        }
+
+        console.log(newBoard);
+
+        this.setState({board: newBoard})
     }
 
     //Switch from hand to range selector and vice versa
@@ -101,16 +154,6 @@ class App extends Component {
         this.setState({players: newPlayers});
     }
 
-    //TO-DO: This function handles a input in the textbox
-    enterRangeHandler = (event) => {
-        //const range = [...this.state.range];
-
-        const newRange = event.target.value.split(",");
-
-        console.log(newRange);
-
-    }
-
     render() {
         return (
             <div className="App">
@@ -119,7 +162,11 @@ class App extends Component {
                 />
                 <div className="data-entry">
                     <div className="row">
-                        <Board></Board>
+                        <Board
+                            board={this.state.board}
+                            enterBoard={(event) => this.enterBoard(event)}
+                        >
+                        </Board>
                     </div>
                     <div className="row">
                         {this.state.players.map((player, index) =>{

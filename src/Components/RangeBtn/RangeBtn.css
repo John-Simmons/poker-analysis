@@ -3,6 +3,7 @@
     border: 1px solid #fff;
     border-radius: 4px;
     text-align: center;
+    cursor: pointer;
 }
 
 .RangeBtn:hover{
