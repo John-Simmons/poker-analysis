@@ -14,7 +14,7 @@ const toggleSelector = (props) => {
                         type="radio"
                         name="options"
                         id="option1"
-                        onClick={props.type==="hand" ? props.toggleType:""}
+                        onClick={props.type==="hand" ? props.toggleType:null}
                         defaultChecked/>
                         Range
                 </label>
@@ -27,7 +27,7 @@ const toggleSelector = (props) => {
                         type="radio"
                         name="options"
                         id="option2"
-                        onClick={props.type==="range" ? props.toggleType:""}/>
+                        onClick={props.type==="range" ? props.toggleType:null}/>
                         Hand
                 </label>
             </div>

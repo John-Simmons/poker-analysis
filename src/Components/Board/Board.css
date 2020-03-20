@@ -16,27 +16,40 @@
     text-align: center;
 }
 
+.board-inputs{
+    text-align: center;
+}
+
 .flop{
-    background-color: coral;
     display: inline-block;
     margin-right: 16px;
-    width: 50%;
-    height: 50px
 }
 
 .turn{
-        background-color: coral;
         display: inline-block;
         margin-right: 16px;
         margin-left: 16px;
-        width: 20%;
         height: 50px
 }
 
 .river{
-    background-color: coral;
     display: inline-block;
     margin-left: 16px;
-    width: 20%;
     height: 50px
+}
+
+.streets .card{
+    width: 50px;
+    height: 75px;
+    background-color: #ddd;
+    border:none;
+    display: inline-block;
+    margin:8px
+}
+
+.board-inputs .input{
+    width: 50px;
+    display: inline-block;
+    margin:8px;
+    text-align: center;
 }

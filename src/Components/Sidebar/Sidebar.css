@@ -1,0 +1,18 @@
+.Sidebar{
+    height: 95%; /* Full-height: remove this if you want "auto" height */
+    width: 25%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 16px; /* Stay at the top */
+    left: 16px;
+    background-color: white;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 4px;
+    -webkit-box-shadow: -2px 2px 6px 2px #ccc;
+    -moz-box-shadow:    -2px 2px 6px 2px #ccc;
+    box-shadow:         -2px 2px 6px 2px #ccc;
+    text-align: left;
+}

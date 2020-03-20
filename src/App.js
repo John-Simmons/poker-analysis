@@ -6,11 +6,12 @@ import './Components/RangeTable/RangeTable.css'
 import './Components/HandTable/HandTable.css'
 import './Components/Player/Player.css'
 import './Components/Board/Board.css'
+import './Components/Sidebar/Sidebar.css'
 import './Components/AddSelector/AddSelector.css'
 import './Components/ToggleSelector/ToggleSelector.css'
 import Player from "./Components/Player/Player"
 import Board from "./Components/Board/Board"
-import AddSelector from "./Components/AddSelector/AddSelector"
+import Sidebar from "./Components/Sidebar/Sidebar"
 
 class App extends Component {
     state = {
@@ -113,33 +114,32 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div className="row">
-                    <Board></Board>
-                </div>
-                <div className="row">
-                    <AddSelector
-                        addPlayer={this.addPlayerHandler}>
-                        Add Player
-                    </AddSelector>
-                </div>
-                <div className="row">
-                    {this.state.players.map((player, index) =>{
-                        return <div
-                            className="col-xs-12 col-sm-6 col-md-6 col-lg-6"
-                            key={player.id.concat(index)}>
-                            <Player
-                                player={player}
-                                index={index}
-                                clearRange={() => this.clearRangeHandler(index)}
-                                enterRange={(event) => this.enterRangeHandler(event)}
-                                selectRange={(handId) => this.selectRangeHandler(handId, index)}
-                                selectHand={(handId) => this.selectHandHandler(handId, index)}
-                                removePlayer={() => this.removePlayerHandler(index)}
-                                toggleType={() => this.toggleTypeHandler(index)}>
-                                {player.id}
-                            </Player>
-                        </div>
-                    })}
+                <Sidebar
+                    addPlayer={() => this.addPlayerHandler()}
+                />
+                <div className="data-entry">
+                    <div className="row">
+                        <Board></Board>
+                    </div>
+                    <div className="row">
+                        {this.state.players.map((player, index) =>{
+                            return <div
+                                className="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+                                key={player.id.concat(index)}>
+                                <Player
+                                    player={player}
+                                    index={index}
+                                    clearRange={() => this.clearRangeHandler(index)}
+                                    enterRange={(event) => this.enterRangeHandler(event)}
+                                    selectRange={(handId) => this.selectRangeHandler(handId, index)}
+                                    selectHand={(handId) => this.selectHandHandler(handId, index)}
+                                    removePlayer={() => this.removePlayerHandler(index)}
+                                    toggleType={() => this.toggleTypeHandler(index)}>
+                                    {player.id}
+                                </Player>
+                            </div>
+                        })}
+                    </div>
                 </div>
             </div>
         );
