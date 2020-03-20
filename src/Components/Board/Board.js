@@ -10,17 +10,17 @@ const board = (props) => {
                 <div className="flop">
                     <h5>Flop</h5>
                     <div className="card">
-                            {props.board.flop[0].suit!= "" ? props.board.flop[0].card.concat(props.board.flop[0].suit): "" }
+                            {props.board.flop[0].suit!== "" ? props.board.flop[0].card.concat(props.board.flop[0].suit): "" }
                             <div className={props.board.flop[0].suit}>
                             </div>
                     </div>
                     <div className="card">
-                        {props.board.flop[1].suit!= "" ? props.board.flop[1].card.concat(props.board.flop[1].suit): "" }
+                        {props.board.flop[1].suit!== "" ? props.board.flop[1].card.concat(props.board.flop[1].suit): "" }
                         <div className={props.board.flop[1].suit}>
                         </div>
                     </div>
                     <div className="card">
-                        {props.board.flop[2].suit!= "" ? props.board.flop[2].card.concat(props.board.flop[2].suit): "" }
+                        {props.board.flop[2].suit!== "" ? props.board.flop[2].card.concat(props.board.flop[2].suit): "" }
                         <div className={props.board.flop[2].suit}>
                         </div>
                     </div>
@@ -28,7 +28,7 @@ const board = (props) => {
                 <div className="turn">
                     <h5>Turn</h5>
                     <div className="card">
-                        {props.board.turn.suit!= "" ? props.board.turn.card.concat(props.board.turn.suit): "" }
+                        {props.board.turn.suit!== "" ? props.board.turn.card.concat(props.board.turn.suit): "" }
                         <div className={props.board.turn.suit}>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ const board = (props) => {
                 <div className="river">
                     <h5>River</h5>
                     <div className="card">
-                        {props.board.river.suit!= "" ? props.board.river.card.concat(props.board.river.suit): "" }
+                        {props.board.river.suit!== "" ? props.board.river.card.concat(props.board.river.suit): "" }
                         <div className={props.board.river.suit}>
                         </div>
                     </div>
