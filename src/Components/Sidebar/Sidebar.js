@@ -4,7 +4,7 @@ import AddSelector from "../AddSelector/AddSelector"
 const sidebar = (props) => {
     return (
         <div className="Sidebar">
-            <h3>Results</h3>
+            <h3>Overview</h3>
             <AddSelector
                 addPlayer={props.addPlayer}>
                 Add Player
