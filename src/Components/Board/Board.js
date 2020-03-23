@@ -1,6 +1,147 @@
 import React from 'react';
 
 const board = (props) => {
+
+    let f1_suit=null;
+
+    if (props.board.flop[0].suit==="s"){
+        f1_suit=(
+            <div className={props.board.flop[0].suit}>
+                &spades;
+            </div>
+        );
+    } else if (props.board.flop[0].suit==="d"){
+        f1_suit=(
+            <div className={props.board.flop[0].suit}>
+                &diams;
+            </div>
+        );
+    } else if (props.board.flop[0].suit==="c"){
+        f1_suit=(
+            <div className={props.board.flop[0].suit}>
+                &clubs;
+            </div>
+        );
+    } else if (props.board.flop[0].suit==="h"){
+        f1_suit=(
+            <div className={props.board.flop[0].suit}>
+                &hearts;
+            </div>
+        );
+    }
+
+    let f2_suit=null;
+
+    if (props.board.flop[1].suit==="s"){
+        f2_suit=(
+            <div className={props.board.flop[1].suit}>
+                &spades;
+            </div>
+        );
+    } else if (props.board.flop[1].suit==="d"){
+        f2_suit=(
+            <div className={props.board.flop[1].suit}>
+                &diams;
+            </div>
+        );
+    } else if (props.board.flop[1].suit==="c"){
+        f2_suit=(
+            <div className={props.board.flop[1].suit}>
+                &clubs;
+            </div>
+        );
+    } else if (props.board.flop[1].suit==="h"){
+        f2_suit=(
+            <div className={props.board.flop[1].suit}>
+                &hearts;
+            </div>
+        );
+    }
+
+    let f3_suit=null;
+
+    if (props.board.flop[2].suit==="s"){
+        f3_suit=(
+            <div className={props.board.flop[2].suit}>
+                &spades;
+            </div>
+        );
+    } else if (props.board.flop[2].suit==="d"){
+        f3_suit=(
+            <div className={props.board.flop[2].suit}>
+                &diams;
+            </div>
+        );
+    } else if (props.board.flop[2].suit==="c"){
+        f3_suit=(
+            <div className={props.board.flop[2].suit}>
+                &clubs;
+            </div>
+        );
+    } else if (props.board.flop[2].suit==="h"){
+        f3_suit=(
+            <div className={props.board.flop[2].suit}>
+                &hearts;
+            </div>
+        );
+    }
+
+    let t_suit=null;
+
+    if (props.board.turn.suit==="s"){
+        t_suit=(
+            <div className={props.board.turn.suit}>
+                &spades;
+            </div>
+        );
+    } else if (props.board.turn.suit==="d"){
+        t_suit=(
+            <div className={props.board.turn.suit}>
+                &diams;
+            </div>
+        );
+    } else if (props.board.turn.suit==="c"){
+        t_suit=(
+            <div className={props.board.turn.suit}>
+                &clubs;
+            </div>
+        );
+    } else if (props.board.turn.suit==="h"){
+        t_suit=(
+            <div className={props.board.turn.suit}>
+                &hearts;
+            </div>
+        );
+    }
+
+    let r_suit=null;
+
+    if (props.board.river.suit==="s"){
+        r_suit=(
+            <div className={props.board.river.suit}>
+                &spades;
+            </div>
+        );
+    } else if (props.board.river.suit==="d"){
+        r_suit=(
+            <div className={props.board.river.suit}>
+                &diams;
+            </div>
+        );
+    } else if (props.board.river.suit==="c"){
+        r_suit=(
+            <div className={props.board.river.suit}>
+                &clubs;
+            </div>
+        );
+    } else if (props.board.river.suit==="h"){
+        r_suit=(
+            <div className={props.board.river.suit}>
+                &hearts;
+            </div>
+        );
+    }
+
     return (
         <div className="Board">
             <h3>
@@ -11,34 +152,29 @@ const board = (props) => {
                     <h5>Flop</h5>
                     <div className="card">
                             {props.board.flop[0].suit!== "" ? props.board.flop[0].card.concat(props.board.flop[0].suit): "" }
-                            <div className={props.board.flop[0].suit}>
-                            </div>
+                            {f1_suit}
                     </div>
                     <div className="card">
                         {props.board.flop[1].suit!== "" ? props.board.flop[1].card.concat(props.board.flop[1].suit): "" }
-                        <div className={props.board.flop[1].suit}>
-                        </div>
+                        {f2_suit}
                     </div>
                     <div className="card">
                         {props.board.flop[2].suit!== "" ? props.board.flop[2].card.concat(props.board.flop[2].suit): "" }
-                        <div className={props.board.flop[2].suit}>
-                        </div>
+                        {f3_suit}
                     </div>
                 </div>
                 <div className="turn">
                     <h5>Turn</h5>
                     <div className="card">
                         {props.board.turn.suit!== "" ? props.board.turn.card.concat(props.board.turn.suit): "" }
-                        <div className={props.board.turn.suit}>
-                        </div>
+                        {t_suit}
                     </div>
                 </div>
                 <div className="river">
                     <h5>River</h5>
                     <div className="card">
                         {props.board.river.suit!== "" ? props.board.river.card.concat(props.board.river.suit): "" }
-                        <div className={props.board.river.suit}>
-                        </div>
+                        {r_suit}
                     </div>
                 </div>
             </div>

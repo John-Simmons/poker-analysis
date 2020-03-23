@@ -27,16 +27,16 @@
 }
 
 .turn{
-        display: inline-block;
-        margin-right: 16px;
-        margin-left: 16px;
-        height: 50px
+    display: inline-block;
+    margin-right: 16px;
+    margin-left: 16px;
+    height: 50px;
 }
 
 .river{
     display: inline-block;
     margin-left: 16px;
-    height: 50px
+    height: 50px;
 }
 
 .streets .card{
@@ -53,41 +53,50 @@
 .card .d{
     height: 12px;
     width: 12px;
-    background: red;
     border-radius: 50%;
-    margin: auto;
+    margin-left: 15px;
+    margin-right: 25px;
+    color: #3333A3;
+    font-size: 28px;
+    line-height: 16px;
     margin-top: 8px;
-    background-color: #3333A3;
+    text-align: center;
 }
 
 .card .c{
     height: 12px;
     width: 12px;
-    background: red;
     border-radius: 50%;
-    margin: auto;
+    margin-left: 15px;
+    margin-right: 25px;
     margin-top: 8px;
-    background-color: #2E8B57;
+    color: #2E8B57;
+    font-size: 28px;
+    line-height: 16px;
 }
 
 .card .h{
     height: 12px;
     width: 12px;
-    background: red;
     border-radius: 50%;
-    margin: auto;
+    margin-left: 15px;
+    margin-right: 25px;
     margin-top: 8px;
-    background-color: #BB2222;
+    color: #BB2222;
+    font-size: 28px;
+    line-height: 16px;
 }
 
 .card .s{
     height: 12px;
     width: 12px;
-    background: red;
     border-radius: 50%;
-    margin: auto;
+    margin-left: 15px;
+    margin-right: 25px;
     margin-top: 8px;
-    background-color: #222;
+    color: #222;
+    font-size: 28px;
+    line-height: 16px;
 }
 
 .board-inputs .input{

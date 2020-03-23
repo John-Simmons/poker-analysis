@@ -15,27 +15,25 @@
 }
 
 .suit-symbol{
-    height: .75vw;
-    width: .75vw;
-    background: red;
-    border-radius: 50%;
+    font-size: 1.5vw;
+    line-height: 1vw;
     margin: auto;
 }
 
 .suit-symbol.diamonds{
-    background-color: #3333A3;
+    color: #3333A3;
 }
 
 .suit-symbol.clubs{
-    background-color: #2E8B57;
+    color: #2E8B57;
 }
 
 .suit-symbol.hearts{
-    background-color: #BB2222;
+    color: #BB2222;
 }
 
 .suit-symbol.spades{
-    background-color: #222;
+    color: #222;
 }
 
 .hb-active{

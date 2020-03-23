@@ -210,7 +210,6 @@ class App extends Component {
                                     player={player}
                                     index={index}
                                     clearRange={() => this.clearRangeHandler(index)}
-                                    enterRange={(event) => this.enterRangeHandler(event)}
                                     selectRange={(handId) => this.selectRangeHandler(handId, index)}
                                     selectHand={(handId) => this.selectHandHandler(handId, index)}
                                     removePlayer={() => this.removePlayerHandler(index)}
