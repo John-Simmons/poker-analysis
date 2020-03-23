@@ -5,6 +5,7 @@ import './Components/HandBtn/HandBtn.css'
 import './Components/RangeTable/RangeTable.css'
 import './Components/HandTable/HandTable.css'
 import './Components/Player/Player.css'
+import './Components/PlayerOverview/PlayerOverview.css'
 import './Components/Board/Board.css'
 import './Components/Sidebar/Sidebar.css'
 import './Components/AddSelector/AddSelector.css'
@@ -17,8 +18,28 @@ class App extends Component {
     state = {
 
         players: [
-            {id: "Hero", range: [], type: "hand", removable: false},
-            {id: "Villian", range: [], type: "range", removable: true}
+            {
+                id: "Hero",
+                range: [],
+                type: "hand",
+                removable: false,
+                equity: {
+                    total:"0",
+                    win:"0",
+                    tie:"0"
+                }
+            },
+            {
+                id: "Villian",
+                range: [], type:
+                "range",
+                removable: true,
+                equity: {
+                    total:"0",
+                    win:"0",
+                    tie:"0"
+                }
+            }
         ],
         board: {
             flop: [
@@ -142,7 +163,17 @@ class App extends Component {
     addPlayerHandler = () => {
         const newPlayers = [...this.state.players];
 
-        newPlayers.push({id: "Villian", range:[], type:"range", removable:true});
+        newPlayers.push({
+            id: "Villian",
+            range:[],
+            type:"range",
+            removable:true,
+            equity: {
+                total:"0",
+                win:"0",
+                tie:"0"
+            }
+        });
 
         this.setState({players: newPlayers});
     }
@@ -158,7 +189,9 @@ class App extends Component {
         return (
             <div className="App">
                 <Sidebar
+                    players={this.state.players}
                     addPlayer={() => this.addPlayerHandler()}
+                    removePlayer={(index) => this.removePlayerHandler(index)}
                 />
                 <div className="data-entry">
                     <div className="row">

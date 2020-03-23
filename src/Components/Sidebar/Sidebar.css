@@ -16,3 +16,11 @@
     box-shadow:         -2px 2px 6px 2px #ccc;
     text-align: left;
 }
+
+.sb-header{
+    margin-bottom: 16px;
+}
+
+.sb-header-title{
+    display: inline-block;
+}

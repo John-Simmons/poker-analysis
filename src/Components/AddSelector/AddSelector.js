@@ -8,9 +8,9 @@ const addSelector = (props) => {
                 onClick={props.addPlayer}>
                 +
             </div>
-            <h5 className="add-btn-label">
+            <h6 className="add-btn-label">
                 {props.children}
-            </h5>
+            </h6>
         </div>
     )
 }
