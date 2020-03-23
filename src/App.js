@@ -44,7 +44,7 @@ class App extends Component {
             }
         ],
         board: {
-            visible: true,
+            visible: false,
             flop: [
                 {card: "", suit: ""},
                 {card: "", suit: ""},
@@ -215,7 +215,7 @@ class App extends Component {
                         >
                         </Board>
                     </div>
-                    <div className="row">
+                    <div className="row player-section">
                         {this.state.players.map((player, index) =>{
                             return <div
                                 className="col-xs-12 col-sm-6 col-md-6 col-lg-6"
