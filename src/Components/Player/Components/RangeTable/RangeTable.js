@@ -1,5 +1,5 @@
 import React from 'react';
-import RangeBtn from "../RangeBtn/RangeBtn"
+import RangeBtn from "./Components/RangeBtn/RangeBtn"
 
 //Range Chart to construct range table
 const rangeChart = [[{id:"AA", type:"pair"}, {id:"AKo", type:"offsuit"}, {id:"AQo", type:"offsuit"}, {id:"AJo", type:"offsuit"}, {id:"ATo", type:"offsuit"}, {id:"A9o", type:"offsuit"}, {id:"A8o", type:"offsuit"}, {id:"A7o", type:"offsuit"}, {id:"A6o", type:"offsuit"}, {id:"A5o", type:"offsuit"}, {id:"A4o", type:"offsuit"}, {id:"A3o", type:"offsuit"}, {id:"A2o", type:"offsuit"}],

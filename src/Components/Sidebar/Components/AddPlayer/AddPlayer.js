@@ -1,8 +1,8 @@
 import React from 'react';
 
-const addSelector = (props) => {
+const addPlayer = (props) => {
     return(
-        <div className="AddSelector">
+        <div className="AddPlayer">
             <div
                 className="add-btn"
                 onClick={props.addPlayer}>
@@ -15,4 +15,4 @@ const addSelector = (props) => {
     )
 }
 
-export default addSelector;
+export default addPlayer;

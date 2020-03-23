@@ -1,7 +1,7 @@
 import React from 'react';
-import RangeTable from "../RangeTable/RangeTable"
-import HandTable from "../HandTable/HandTable"
-import ToggleSelector from "../ToggleSelector/ToggleSelector"
+import RangeTable from "./Components/RangeTable/RangeTable"
+import HandTable from "./Components/HandTable/HandTable"
+import ToggleSelector from "./Components/ToggleSelector/ToggleSelector"
 
 const player = (props) => {
     //Create removeable

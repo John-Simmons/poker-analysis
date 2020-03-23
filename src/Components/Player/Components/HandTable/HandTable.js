@@ -1,5 +1,5 @@
 import React from 'react';
-import HandBtn from "../HandBtn/HandBtn"
+import HandBtn from "./Components/HandBtn/HandBtn"
 
 //Range Chart to construct range table
 const handChart = [[{id:"Ad", suit:"diamonds"}, {id:"Ac", suit:"clubs"}, {id:"Ah", suit:"hearts"}, {id:"As", suit:"spades"}],

@@ -1,13 +1,13 @@
 import React from 'react';
-import AddSelector from "../AddSelector/AddSelector"
-import PlayerOverview from "../PlayerOverview/PlayerOverview"
+import AddPlayer from "./Components/AddPlayer/AddPlayer"
+import PlayerOverview from "./Components/PlayerOverview/PlayerOverview"
 
 const sidebar = (props) => {
     return (
         <div className="Sidebar">
             <div className="sb-header">
                 <h3 className="sb-header-title">Players</h3>
-                <AddSelector
+                <AddPlayer
                     addPlayer={props.addPlayer}
                 />
             </div>

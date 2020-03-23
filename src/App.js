@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import './App.css';
-import './Components/RangeBtn/RangeBtn.css'
-import './Components/HandBtn/HandBtn.css'
-import './Components/RangeTable/RangeTable.css'
-import './Components/HandTable/HandTable.css'
-import './Components/Player/Player.css'
-import './Components/PlayerOverview/PlayerOverview.css'
-import './Components/Board/Board.css'
-import './Components/Sidebar/Sidebar.css'
-import './Components/AddSelector/AddSelector.css'
-import './Components/ToggleSelector/ToggleSelector.css'
+
 import Player from "./Components/Player/Player"
+import './Components/Player/Player.css'
+import './Components/Player/Components/RangeTable/RangeTable.css'
+import './Components/Player/Components/RangeTable/Components/RangeBtn/RangeBtn.css'
+import './Components/Player/Components/HandTable/HandTable.css'
+import './Components/Player/Components/HandTable/Components/HandBtn/HandBtn.css'
+import './Components/Player/Components/ToggleSelector/ToggleSelector.css'
+
 import Board from "./Components/Board/Board"
+import './Components/Board/Board.css'
+
 import Sidebar from "./Components/Sidebar/Sidebar"
+import './Components/Sidebar/Sidebar.css'
+import './Components/Sidebar/Components/AddPlayer/AddPlayer.css'
+import './Components/Sidebar/Components/PlayerOverview/PlayerOverview.css'
 
 class App extends Component {
     state = {
-
         players: [
             {
                 id: "Hero",

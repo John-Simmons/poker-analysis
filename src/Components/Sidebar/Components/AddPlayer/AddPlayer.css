@@ -1,4 +1,4 @@
-.AddSelector{
+.AddPlayer{
     margin-bottom: 16px;
     display: inline-block;
     float: right;
@@ -13,12 +13,10 @@
     border-radius: 50%;
     box-shadow: 0 3px 5px 0 #666;
     transition: all 0.1s ease-in-out;
-
     font-size: 30px;
     color: white;
     text-align: center;
     line-height:33px;
-
     cursor: pointer;
 }
 
