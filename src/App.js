@@ -44,6 +44,7 @@ class App extends Component {
             }
         ],
         board: {
+            visible: true,
             flop: [
                 {card: "", suit: ""},
                 {card: "", suit: ""},
@@ -53,6 +54,18 @@ class App extends Component {
             river: {card:"", suit:""}
         }
 
+    }
+
+    toggleBoard = () =>{
+        const newBoard = Object.assign({}, this.state.board);
+
+        if (newBoard.visible){
+            newBoard.visible = false;
+        }else{
+            newBoard.visible = true;
+        }
+
+        this.setState({board: newBoard});
     }
 
     toValidCard = (value) => {
@@ -98,8 +111,6 @@ class App extends Component {
         }else if (index[0] === "river"){
             [newBoard.river.card, newBoard.river.suit] = this.toValidCard(value);
         }
-
-        console.log(newBoard);
 
         this.setState({board: newBoard})
     }
@@ -200,6 +211,7 @@ class App extends Component {
                         <Board
                             board={this.state.board}
                             enterBoard={(event) => this.enterBoard(event)}
+                            toggleBoard={this.toggleBoard}
                         >
                         </Board>
                     </div>

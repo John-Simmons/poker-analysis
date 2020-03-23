@@ -142,11 +142,10 @@ const board = (props) => {
         );
     }
 
-    return (
-        <div className="Board">
-            <h3>
-                Board
-            </h3>
+    let streets=null;
+
+    if(props.board.visible){
+        streets=(<div>
             <div className="streets">
                 <div className="flop">
                     <h5>Flop</h5>
@@ -221,6 +220,20 @@ const board = (props) => {
                     </input>
                 </div>
             </div>
+        </div>);
+    }
+
+    return (
+        <div className="Board">
+            <h3 className="b-title">
+                Board
+            </h3>
+            <div
+                className="b-min-max"
+                onClick={props.toggleBoard}>
+                {props.board.visible?"-":"+"}
+            </div>
+            {streets}
         </div>
     )
 }
