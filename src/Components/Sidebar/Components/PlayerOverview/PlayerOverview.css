@@ -1,0 +1,24 @@
+.PlayerOverview{
+    margin-bottom: 16px;
+}
+
+.po-header{
+    margin-bottom: 2px;
+}
+
+.po-equity{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.po-header-name{
+    display: inline-block;
+}
+
+.po-close-btn{
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 24px;
+}

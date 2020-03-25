@@ -1,0 +1,26 @@
+.ToggleSelector{
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+.ToggleSelector .toggle-btn{
+    background-color: white;
+    border: 2px solid #555b6e;
+    color: #555b6e;
+}
+
+.ToggleSelector .toggle-btn:hover{
+    background-color: #777d8f;
+    border: 2px solid #777d8f;
+    color: white;
+}
+
+.ToggleSelector #toggle-option.active{
+    background-color: #555b6e;
+    border: 2px solid #555b6e;
+}
+
+.ToggleSelector #toggle-option.focus{
+    background-color: #555b6e;
+    border: 2px solid #555b6e;
+}

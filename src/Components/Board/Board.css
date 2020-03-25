@@ -1,0 +1,137 @@
+.Board{
+    border-radius: 4px;
+    background-color: #fff;
+    margin: 16px;
+    -webkit-box-shadow: -2px 2px 6px 2px #ccc;
+    -moz-box-shadow:    -2px 2px 6px 2px #ccc;
+    box-shadow:         -2px 2px 6px 2px #ccc;
+    width: 100%;
+    padding: 16px;
+    text-align: left;
+}
+
+.streets{
+    text-align: center;
+}
+
+.board-inputs{
+    text-align: center;
+}
+
+.flop{
+    display: inline-block;
+    margin-right: 16px;
+    text-align: center;
+}
+
+.turn{
+    display: inline-block;
+    margin-right: 16px;
+    margin-left: 16px;
+    height: 50px;
+}
+
+.river{
+    display: inline-block;
+    margin-left: 16px;
+    height: 50px;
+}
+
+.streets .card{
+    width: 50px;
+    height: 75px;
+    background-color: #ddd;
+    border:none;
+    display: inline-block;
+    margin:8px;
+    vertical-align: top;
+    padding-top: 8px;
+}
+
+.card .d{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-right: 25px;
+    color: #3333A3;
+    font-size: 28px;
+    line-height: 16px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.card .c{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-top: 8px;
+    color: #2E8B57;
+    font-size: 28px;
+    line-height: 16px;
+}
+
+.card .h{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-top: 8px;
+    color: #BB2222;
+    font-size: 28px;
+    line-height: 16px;
+}
+
+.card .s{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-top: 8px;
+    color: #222;
+    font-size: 28px;
+    line-height: 16px;
+}
+
+.board-inputs .input{
+    width: 50px;
+    display: inline-block;
+    margin:8px;
+    text-align: center;
+}
+
+.b-title{
+    display: inline-block;
+}
+
+.b-min-max{
+    display: inline-block;
+    float: right;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.1s ease-in-out;
+    font-size: 30px;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    line-height:33px;
+    cursor: pointer;
+}
+
+.b-min-max:hover{
+   box-shadow: 0 3px 7px 0 #666;
+   transform: scale(1.05);
+   background-color: white;
+}
+
+.b-min-max:active {
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.4);
+}
