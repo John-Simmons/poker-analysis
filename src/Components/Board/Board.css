@@ -40,8 +40,8 @@
 .streets .card{
     width: 50px;
     height: 75px;
-    background-color: #ddd;
-    border:none;
+    background-color: #fff;
+    border:2px dashed #222;
     display: inline-block;
     margin:8px;
     vertical-align: top;

@@ -34,9 +34,9 @@
 }
 
 .data-entry{
-    float: right;
-    width: 72%;
+    margin-left: 332px;
     padding-right: 16px;
+    min-width: 460px;
 }
 
 @keyframes App-logo-spin {
